@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多媒体与嵌入学习</title>
+  </head>
+  <body>
+    <!-- alt属性 ，它的值应该是对图片的文字描述，用于在图片无法显示或不能被看到的情况 -->
+    <img src="img/a.png" alt="图片无法显示" />
+
+    <!-- 宽度和高度属性来指定你的图片的高度和宽度 -->
+    <img src="img/a.png" alt="图片无法显示" width="300" height="300" />
+
+    <!-- 图片增加title属性来提供一个鼠标悬停提示，看起来就像链接标题 -->
+    <img src="img/a.png" title="金数据logo" />
+
+    <!-- 为图片搭配说明文字的方式来解说图片,使用 HTML5 的 <figure> 和 <figcaption> 元素,为图片提供一个语义容器，在标题和图片之间建立清晰的关联 -->
+    <figure>
+      <img src="img/a.png" alt="图片无法显示" />
+      <figcaption>曼彻斯特大学博物馆展出的一只霸王龙的化石</figcaption>
+    </figure>
+
+    <p>aaaaaa</p>
+    p { background-image: url("img/background01.jpg"); }
+
+    <!-- <video> 允许你轻松地嵌入一段视频。一个简单的例子如下： -->
+    <video src="video/video01.mp4" controls width="300" height="300">
+      <p>
+        你的浏览器不支持 HTML5 视频。可点击<a href="video/video01.mp4">此链接</a
+        >观看
+      </p>
+    </video>
+
+    <!-- <audio> 标签  音频-->
+    <audio controls>
+      <source src="viper.mp3" type="audio/mp3" />
+      <p>
+        你的浏览器不支持 HTML5 音频，可点击<a href="viper.mp3">此链接</a>收听。
+      </p>
+    </audio>
+<!-- 
+    <iframe
+      src="https://developer.mozilla.org/zh-CN/docs/Web/HTML"
+      width="100%"
+      height="500"
+      frameborder="0"
+      allowfullscreen
+      sandbox
+    >
+      <p>
+        <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">
+          Fallback link for browsers that don't support iframes
+        </a>
+      </p>
+    </iframe> -->
+
+    <!-- SVG 是用于描述矢量图像的XML语言。 它基本上是像HTML一样的标记，只是你有许多不同的元素来定义要显示在图像中的形状，以及要应用于这些形状的效果。 SVG用于标记图形，而不是内容。 -->
+    <svg
+      version="1.1"
+      baseProfile="full"
+      width="300"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="100%" height="100%" fill="black" />
+      <circle cx="150" cy="100" r="90" fill="blue" />
+    </svg>
+
+    <!-- 分辨率切换：不同的尺寸 
+    srcset定义了我们允许浏览器选择的图像集，以及每个图像的大小
+    sizes定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择-->
+    <img srcset="elva-fairy-320w.jpg 320w,
+             elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+  </body>
+</html>
