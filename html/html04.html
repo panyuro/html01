@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML表单</title>
+    <link href="form/basic/from.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <form>
+      <form action="/my-handling-form-page" method="post">
+        <div>
+          <label for="name">Name:</label>
+          <!-- 要定义`<input>`的默认值，你必须使用value 属性 -->
+          <input type="text" id="name" />
+        </div>
+        <div>
+          <!-- 主要是在语义上的区分,这种类型的字段不会对用户输入的值执行任何限制(包括字母，等等)-->
+          <label>telephone</label>
+          <input type="tel" id="tel" name="tel" />
+        </div>
+        <div>
+          <label for="mail">E-mail:</label>
+          <!-- 用户需要在框中输入有效的电子邮件地址 -->
+          <input type="email" id="mail" />
+        </div>
+        <div>
+          <label>password</label>
+          <!-- 它不会为输入的文本添加任何特殊的约束，但是它会模糊输入到字段中的值(例如，用点或小行星)，这样它就不能被其他人读取。 -->
+          <input type="password" id="pwd" name="pwd" />
+        </div>
+        <div>
+          <label for="msg">Message:</label>
+          <!-- 想定义`<textarea>`的默认值，您只需在`<textarea>`元素的开始和结束标记之间放置默认值 -->
+          <textarea id="msg"></textarea>
+        </div>
+        <div>
+          <label>url:</label>
+          <input type="url" id="url" name="url" />
+        </div>
+        <div>
+          <label>单选下拉框</label>
+          <select id="groups" name="groups">
+            <optgroup label="fruits">
+              <option>Banana</option>
+              <option selected>Cherry</option>
+              <option>Lemon</option>
+            </optgroup>
+            <optgroup label="vegetables">
+              <option>Carrot</option>
+              <option>Eggplant</option>
+              <option>Potato</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <label>多选下拉框：</label>
+          <select multiple id="multi" name="multi">
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Lemon</option>
+          </select>
+        </div>
+        <div>
+          <!-- 自动补全输入框 -->
+          <!-- 一旦数据列表与表单小部件相关联，它的选项用于自动完成用户输入的文本;通常，这是作为一个下拉框提供给用户的，匹配在输入框中输入了的内容 -->
+          <label for="myFruit">自动补全输入框</label>
+          <input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+          <datalist id="mySuggestion">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Blackberry</option>
+            <option>Blueberry</option>
+            <option>Lemon</option>
+            <option>Lychee</option>
+            <option>Peach</option>
+            <option>Pear</option>
+          </datalist>
+        </div>
+        <div>
+          <label>复选框</label>
+          <input
+            type="checkbox"
+            checked
+            id="carrots"
+            name="carrots"
+            value="carrots"
+          />
+        </div>
+        <div>
+          <label>数字的小部件</label>
+          <input type="number" name="age" id="age" min="1" max="10" step="2" />
+          <!-- 这将创建一个数字小部件，其值被限制为1到10之间的任何值，而其增加和减少按钮的步进值将更改为2。 -->
+        </div>
+        <div>
+          <!-- 另一种选择数字的方法是使用滑块。从视觉上讲，滑块没有文本字段准确，因此它们被用来选择一个确切值并不重要的数字。 -->
+          <label>滑块</label>
+          <input
+            type="range"
+            name="beans"
+            id="beans"
+            min="0"
+            max="500"
+            step="10"
+          />
+          <!-- 这个例子创建了一个滑块，它可能的值在0到500之间，而它的递增/递减按钮以+10和-10来改变值 -->
+        </div>
+        <div>
+          <label>日期时间选择器</label>
+          <input type="datetime-local" name="datetime" id="datetime" />
+          <label>月选择器</label>
+          <input type="month" name="month" id="month" />
+          <!-- 所有日期和时间控制都可以使用min和max属性来约束。 -->
+          <label>使用min和max属性来约束</label>
+          <input
+            type="date"
+            name="myDate"
+            min="2013-06-01"
+            max="2013-08-31"
+            id="myDate"
+          />
+        </div>
+        <div>
+          <!-- 颜色小部件允许用户在文本和可视的方式中选择颜色。 -->
+          <label for="">拾色器</label>
+          <input type="color" name="color" id="color" />
+        </div>
+        <div>
+          <!-- HTML表单能够将文件发送到服务器，文件选择器小部件是用户如何选择一个或多个文件来发送的，
+            要创建一个文件选择器小部件，您可以使用<input>元素，将它的type属性设置为file。被接受的文件类型可以使用accept属性来约束。
+            此外，如果您想让用户选择多个文件，那么可以通过添加multiple属性来实现。 -->
+          <label for="">文件选择器</label>
+          <input type="file" name="file" id="file" accept="image/*" multiple />
+        </div>
+        <div>
+          <label for="">隐藏内容</label>
+          <input
+            type="hidden"
+            id="timestamp"
+            name="timestamp"
+            value="1286705410"
+          />
+        </div>
+        <div>
+            <!-- 图像按钮控件是一个与<img>元素完全相同的元素，除了当用户点击它时，它的行为就像一个提交按钮(见上面) -->
+            <label for="">图像按钮</label>
+            <input type="image" alt="Click me!" src="../img/a.png" width="30" height="30" />
+        </div>
+        <div>
+            <!-- 仪表和进度条是数值的可视化表示。 -->
+            <label for="">仪表和进度盘</label>
+            <progress max="100" value="75">75/100</progress>
+        </div>
+        <button type="submit">提交</button>
+      </form>
+    </form>
+    <hr />
+    <form>
+      <p>
+        <!-- 设置标签可以在所有浏览器中单击标签来激活相应的小部件（如单选按钮和复选框）。即通过点击标签，和点击输入区效果一样，从而使得可点击区域变大 -->
+        <label for="taste_1">I like cherry</label>
+        <input type="checkbox" id="taste_1" name="taste_cherry" value="1" />
+      </p>
+      <p>
+        <label for="taste_2">I like banana</label>
+        <input type="checkbox" id="taste_2" name="taste_banana" value="2" />
+      </p>
+    </form>
+  </body>
+</html>
