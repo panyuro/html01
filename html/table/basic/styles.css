@@ -1,5 +1,5 @@
 /* 将额外的样式表导入主CSS样式表，可以使用@import: */
-@import "styles2.css";
+/* @import "styles2.css"; */
 
 /* 一次使用多个选择器 */
 /* p, li {
@@ -23,7 +23,7 @@
   } */
 
 /* 出现在标题后面并且与标题具有相同层级的段落样式，为此需在两个选择器之间添加一个 + 号 (成为 相邻选择符)  */
-h1 + p {
+/* h1 + p {
   font-size: 1px;
 }
 
@@ -38,30 +38,61 @@ a:visited {
 a:hover {
   color: red;
   /* 去除链接样式，删除了下划线 */
-  text-decoration: none;
-}
+/* text-decoration: none;
+} */
 
-.outer {
+/* .outer {
   border: 5px solid black;
-}
-
+} */
+/* 
 .box {
   padding: 10px;
   /* calc()函数。这个函数允许您在CSS中进行简单的计算 */
-  width: calc(90% - 30px);
-  background-color: rebeccapurple;
-  color: white;
-  /* <transform>, 例如 rotate().旋转 */
-  transform: rotate(0.8turn);
-}
+/* width: calc(90% - 30px); */
+/* background-color: rebeccapurple; */
+/* color: white; */
+/* <transform>, 例如 rotate().旋转 */
+/* transform: rotate(0.8turn); */
+/* } 
 
 body {
   background-color: pink;
 }
 
 /* 果浏览器的宽度大于30em，则背景色将为蓝色。 */
-@media (min-width: 30em) {
+/* @media (min-width: 30em) {
   body {
     background-color: blue;
   }
+}  */
+
+/* span.highlight {
+  background-color: yellow;
 }
+
+h1.highlight {
+  background-color: pink;
+}
+
+/* 选中一段的第一行 */
+/* article p::first-line {
+  font-size: 120%;
+  font-weight: bold;
+}  */
+
+
+/* ::before和::after伪元素与content属性的共同使用，在CSS中被叫做“生成内容”，推荐的用法是插入一个图标 */
+/* .box::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+  border: 1px solid black;
+}
+
+.box::after {
+  content: " ➥"
+}    */
+
+     
