@@ -1,0 +1,26 @@
+p {
+  /* color 属性设置选中元素的前景内容的颜色
+     (通常指文本，不过也包含一些其他东西，
+     或者是使用 text-decoration 属性放置在文本下方或上方的线 (underline overline)。 */
+  color: red;
+  font-size: 10px;
+  /* 在你的文本上设置一个不同的字体 */
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: capitalize;
+  line-height: 1.5;
+}
+p::first-line {
+  letter-spacing: 2px;
+  word-spacing: 4px;
+}
+span {
+  /* 1em 等于我们设计的当前元素的父元素上设置的字体大小 */
+  font-size: 5em;
+  /* 1rem 等于 HTML 中的根元素的字体大小 */
+  font-size: 5rem;
+}
+h1 {
+  text-shadow: 4px 4px 5px red;
+}
